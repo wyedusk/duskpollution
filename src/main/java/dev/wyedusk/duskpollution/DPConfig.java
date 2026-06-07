@@ -18,10 +18,10 @@ public class DPConfig implements IModBusEvent {
             .comment("The amount of times a gas in the air can move before it starts being able to dissipate. Set to -1 to disable natural dissipation.")
             .defineInRange("movementsBeforeGasCanDissipate", 350, -1, Integer.MAX_VALUE);
     private static final ModConfigSpec.ConfigValue<Float> BASE_DISSIPATION_CHANCE = BUILDER
-            .comment("The default percentage chance for a gas to dissipate.\n# Default: 0.5\n# Range: 0.0 - 100.0")
+            .comment("The default percentage chance for a gas to dissipate.\n Default: 0.5\n Range: 0.0 ~ 100.0")
             .define("baseDissipationChance", 25.0f, DPConfig::percentValidator);
     private static final ModConfigSpec.ConfigValue<Float> DISSIPATION_CHANCE_INCREASE = BUILDER
-            .comment("The amount the dissipation chance increases by each time a gas moves without dissipating.\n# Default: 0.5\n# Range: 0.0 - 100.0")
+            .comment("The amount to increase the dissipation chance by each time a gas moves without dissipating.\n Default: 0.5\n Range: 0.0 ~ 100.0")
             .define("dissipationChanceIncrease", 0.5f, DPConfig::percentValidator);
 
     static final ModConfigSpec SPEC = BUILDER.build();

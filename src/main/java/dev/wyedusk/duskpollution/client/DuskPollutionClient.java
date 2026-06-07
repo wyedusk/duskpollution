@@ -11,12 +11,14 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.IModBusEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 @Mod(value = DuskPollution.MODID, dist = Dist.CLIENT)
 public class DuskPollutionClient {
     public DuskPollutionClient(
-            IEventBus _modEventBus, ModContainer modContainer) {
-
+            IEventBus modEventBus, ModContainer modContainer) {
+        modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
 
     @EventBusSubscriber(modid = DuskPollution.MODID, value = Dist.CLIENT)

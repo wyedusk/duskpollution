@@ -1,5 +1,11 @@
 {
-  "itemGroup.duskpollution": "Example Mod Tab",
-  "block.duskpollution.example_block": "Example Block",
-  "item.duskpollution.example_item": "Example Item"
+  "itemGroup.duskpollution": "Dusk's Pollution",
+
+  "block.duskpollution.carbon": "Carbon",
+  "block.duskpollution.sulfur": "Sulfur",
+
+  "duskpollution.configuration.gasMaximumHeight": "Maximum Gas Height",
+  "duskpollution.configuration.movementsBeforeGasCanDissipate": "Movements before Gas can Dissipate",
+  "duskpollution.configuration.baseDissipationChance": "Base Dissipation Chance",
+  "duskpollution.configuration.dissipationChanceIncrease": "Dissipation Chance Increase"
 }
