@@ -2,7 +2,6 @@ package dev.wyedusk.duskpollution.datagen;
 
 import dev.wyedusk.duskpollution.DPBlocks;
 import dev.wyedusk.duskpollution.DuskPollution;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;

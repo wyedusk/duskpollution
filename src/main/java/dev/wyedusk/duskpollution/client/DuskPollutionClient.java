@@ -3,7 +3,6 @@ package dev.wyedusk.duskpollution.client;
 import dev.wyedusk.duskpollution.DPEntities;
 import dev.wyedusk.duskpollution.DuskPollution;
 import dev.wyedusk.duskpollution.client.renderer.DPGasEntityRenderer;
-import net.minecraft.client.renderer.entity.FallingBlockRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -16,7 +15,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 @Mod(value = DuskPollution.MODID, dist = Dist.CLIENT)
 public class DuskPollutionClient {
     public DuskPollutionClient(
-            IEventBus modEventBus, ModContainer modContainer) {
+            IEventBus _modEventBus, ModContainer modContainer) {
 
     }
 

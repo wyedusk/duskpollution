@@ -2,8 +2,6 @@ package dev.wyedusk.duskpollution;
 
 import dev.wyedusk.duskpollution.entity.DPGasEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.neoforged.bus.api.IEventBus;

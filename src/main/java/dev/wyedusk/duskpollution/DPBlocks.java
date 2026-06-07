@@ -7,7 +7,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -17,6 +16,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import static dev.wyedusk.duskpollution.DuskPollution.ITEMS;
 
+@SuppressWarnings("unused")
 public class DPBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(DuskPollution.MODID);
 

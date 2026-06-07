@@ -62,8 +62,8 @@ public class SulfurBlockEntity extends BlockEntity {
                     if (level.getBlockState(escapePos).isAir()) {
                         level.setBlock(escapePos, state, 3);
                         BlockEntity newBe = level.getBlockEntity(escapePos);
-                        if (newBe instanceof CarbonBlockEntity newCarbonBe) {
-                            newCarbonBe.setSkyMoves(blockEntity.skyMoves);
+                        if (newBe instanceof SulfurBlockEntity newSulfurBe) {
+                            newSulfurBe.setSkyMoves(blockEntity.skyMoves);
                         }
                         level.removeBlock(pos, false);
                     }

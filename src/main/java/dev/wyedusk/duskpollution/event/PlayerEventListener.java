@@ -6,7 +6,6 @@ import dev.wyedusk.duskpollution.DuskPollution;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
-import net.minecraft.tags.TagKey;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -14,15 +13,12 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.IModBusEvent;
-import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Optional;
@@ -47,7 +43,6 @@ public class PlayerEventListener implements IModBusEvent {
             // Player is on the surface, do surface pollution check
             for (int chunkX = centerChunkPos.x - 1; chunkX <= centerChunkPos.x + 1; chunkX++) {
                 for (int chunkZ = centerChunkPos.z - 1; chunkZ <= centerChunkPos.z + 1; chunkZ++) {
-                    LevelChunk chunk = level.getChunk(chunkX, chunkZ);
                     for (int localX = 0; localX < 16; localX++) {
                         for (int localZ = 0; localZ < 16; localZ++) {
                             for (int yOffset = 0; yOffset < 4; yOffset++) {
