@@ -86,8 +86,6 @@ public class PlayerEventListener implements IModBusEvent {
         pollutantTier = Math.max(pollutantTier, 0);
         toxicPollutantTier = Math.max(toxicPollutantTier, 0);
 
-        player.sendSystemMessage(Component.literal(String.format("Pollution Tier: %s | Toxicity Tier: %s", pollutantTier, toxicPollutantTier)));
-
         // Apply effects
         for (int pi = 0; pi <= Math.min(pollutantTiers, pollutantTier); pi++) {
             int add = Math.max(0, (pollutantTier - pi) - 1);
