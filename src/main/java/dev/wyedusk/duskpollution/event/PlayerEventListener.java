@@ -58,7 +58,10 @@ public class PlayerEventListener implements IModBusEvent {
                                 );
                                 BlockState state = level.getBlockState(queryPos);
                                 if (state.is(DPBlocks.POLLUTANTS)) pollutants++;
-                                if (state.is(DPBlocks.POLLUTANTS_TOXIC)) toxicPollutants++;
+                                if (state.is(DPBlocks.POLLUTANTS_TOXIC)) {
+                                    pollutants++;
+                                    toxicPollutants++;
+                                }
                             }
                         }
                     }

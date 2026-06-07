@@ -15,6 +15,10 @@ public class DPBlockEntities {
             BLOCK_ENTITIES.register("carbon_block_entity", () ->
                     BlockEntityType.Builder.of(CarbonBlockEntity::new, DPBlocks.CARBON_BLOCK.get()).build(null)
             );
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CarbonBlockEntity>> SULFUR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("sulfur_block_entity", () ->
+                    BlockEntityType.Builder.of(CarbonBlockEntity::new, DPBlocks.SULFUR_BLOCK.get()).build(null)
+            );
 
     public static void register(
             IEventBus eventBus) {

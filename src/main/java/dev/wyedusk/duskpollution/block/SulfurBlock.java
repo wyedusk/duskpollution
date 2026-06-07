@@ -1,7 +1,7 @@
 package dev.wyedusk.duskpollution.block;
 
 import dev.wyedusk.duskpollution.DPBlockEntities;
-import dev.wyedusk.duskpollution.blockentity.CarbonBlockEntity;
+import dev.wyedusk.duskpollution.blockentity.SulfurBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -15,8 +15,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class CarbonBlock extends DPGasBlock {
-    public CarbonBlock(
+public class SulfurBlock extends DPGasBlock {
+    public SulfurBlock(
             Properties properties) {
         super(properties);
     }
@@ -30,6 +30,8 @@ public class CarbonBlock extends DPGasBlock {
             if (eyeY >= pos.getY() && eyeY <= pos.getY() + 1.0) {
                 livingEntity.addEffect(new MobEffectInstance(
                         MobEffects.BLINDNESS, 60, 0, false, true));
+                livingEntity.addEffect(new MobEffectInstance(
+                        MobEffects.POISON, 60, 0, false, true));
             }
         }
     }
@@ -37,15 +39,15 @@ public class CarbonBlock extends DPGasBlock {
     @Nullable @Override
     public BlockEntity newBlockEntity(
             @NotNull BlockPos pos, @NotNull BlockState state) {
-        return new CarbonBlockEntity(pos, state);
+        return new SulfurBlockEntity(pos, state);
     }
     @Nullable @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(
             Level level, @NotNull BlockState state, @NotNull BlockEntityType<T> type) {
         if (level.isClientSide) return null;
 
-        if (type == DPBlockEntities.CARBON_BLOCK_ENTITY.get()) {
-            return (lvl, pos, blockState, be) -> CarbonBlockEntity.tick(lvl, pos, blockState, (CarbonBlockEntity) be);
+        if (type == DPBlockEntities.SULFUR_BLOCK_ENTITY.get()) {
+            return (lvl, pos, blockState, be) -> SulfurBlockEntity.tick(lvl, pos, blockState, (SulfurBlockEntity) be);
         }
         return null;
     }

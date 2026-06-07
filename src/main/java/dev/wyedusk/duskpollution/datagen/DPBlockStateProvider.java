@@ -20,6 +20,7 @@ public class DPBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         simpleBlockWithItem(DPBlocks.CARBON_BLOCK.get(), getModelOfGasBlock(DPBlocks.CARBON_BLOCK));
+        simpleBlockWithItem(DPBlocks.SULFUR_BLOCK.get(), getModelOfGasBlock(DPBlocks.SULFUR_BLOCK));
     }
 
     private BlockModelBuilder getModelOfGasBlock(

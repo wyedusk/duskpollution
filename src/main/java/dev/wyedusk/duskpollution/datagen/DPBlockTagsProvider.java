@@ -22,5 +22,7 @@ public class DPBlockTagsProvider extends BlockTagsProvider {
             HolderLookup.@NotNull Provider provider) {
         tag(DPBlocks.POLLUTANTS)
                 .add(DPBlocks.CARBON_BLOCK.get());
+        tag(DPBlocks.POLLUTANTS_TOXIC)
+                .add(DPBlocks.SULFUR_BLOCK.get());
     }
 }

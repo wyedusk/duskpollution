@@ -1,6 +1,7 @@
 package dev.wyedusk.duskpollution;
 
 import dev.wyedusk.duskpollution.block.CarbonBlock;
+import dev.wyedusk.duskpollution.block.SulfurBlock;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -33,15 +34,27 @@ public class DPBlocks {
     public static final DeferredBlock<Block> CARBON_BLOCK = BLOCKS.registerBlock("carbon",
             CarbonBlock::new,
             BlockBehaviour.Properties.of()
-                .noCollission()
-                .noOcclusion()
-                .noLootTable()
-                .isSuffocating((state, level, pos) -> true)
-                .explosionResistance(18000000)
-                .strength(-1.0F, 3600000.0F)
-                .mapColor(MapColor.COLOR_GRAY));
+                    .noCollission()
+                    .noOcclusion()
+                    .noLootTable()
+                    .isSuffocating((state, level, pos) -> true)
+                    .explosionResistance(18000000)
+                    .strength(-1.0F, 3600000.0F)
+                    .mapColor(MapColor.COLOR_GRAY));
     public static final DeferredItem<BlockItem> CARBON_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("carbon",
             CARBON_BLOCK);
+    public static final DeferredBlock<Block> SULFUR_BLOCK = BLOCKS.registerBlock("sulfur",
+            SulfurBlock::new,
+            BlockBehaviour.Properties.of()
+                    .noCollission()
+                    .noOcclusion()
+                    .noLootTable()
+                    .isSuffocating((state, level, pos) -> true)
+                    .explosionResistance(18000000)
+                    .strength(-1.0F, 3600000.0F)
+                    .mapColor(MapColor.COLOR_YELLOW));
+    public static final DeferredItem<BlockItem> SULFUR_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("sulfur",
+            SULFUR_BLOCK);
 
     public static void register(
             IEventBus eventBus) {
