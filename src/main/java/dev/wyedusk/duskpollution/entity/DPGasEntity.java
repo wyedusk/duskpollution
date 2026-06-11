@@ -2,6 +2,7 @@ package dev.wyedusk.duskpollution.entity;
 
 import dev.wyedusk.duskpollution.DPConfig;
 import dev.wyedusk.duskpollution.DPEntities;
+import dev.wyedusk.duskpollution.server.DPServerConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
@@ -59,7 +60,7 @@ public class DPGasEntity extends Entity {
 
         BlockPos currentPos = this.blockPosition();
         BlockPos nextPos = currentPos.above();
-        boolean reachedYMax = currentPos.getY() >= DPConfig.gasMaximumHeight;
+        boolean reachedYMax = currentPos.getY() >= DPServerConfig.gasMaximumHeight;
         boolean hitCeiling = !this.level().getBlockState(nextPos).isAir();
         if (reachedYMax || hitCeiling) {
             if (this.level().getBlockState(currentPos).isAir()) {

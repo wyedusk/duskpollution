@@ -3,6 +3,7 @@ package dev.wyedusk.duskpollution.blockentity;
 import dev.wyedusk.duskpollution.DPBlockEntities;
 import dev.wyedusk.duskpollution.DPConfig;
 import dev.wyedusk.duskpollution.entity.DPGasEntity;
+import dev.wyedusk.duskpollution.server.DPServerConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
@@ -35,7 +36,7 @@ public class SulfurBlockEntity extends BlockEntity {
         if (level.isClientSide) return;
 
         BlockPos nextPos = pos.above();
-        boolean reachedYMax = pos.getY() >= DPConfig.gasMaximumHeight;
+        boolean reachedYMax = pos.getY() >= DPServerConfig.gasMaximumHeight;
         boolean hitCeiling = !level.getBlockState(nextPos).isAir();
 
         blockEntity.life++;
@@ -48,11 +49,11 @@ public class SulfurBlockEntity extends BlockEntity {
                 BlockPos escapePos = findHorizontalEscape(level, pos);
                 if (escapePos != null) {
                     if (reachedYMax) blockEntity.skyMoves++;
-                    if (DPConfig.gasCanNaturallyDissipate) {
-                        if (blockEntity.skyMoves >= DPConfig.movementsBeforeGasCanDissipate) {
-                            float baseChance = DPConfig.baseDissipationChance;
-                            int additionalMoves = blockEntity.skyMoves - DPConfig.movementsBeforeGasCanDissipate;
-                            float currentChance = baseChance + (additionalMoves * DPConfig.dissipationChanceIncrease);
+                    if (DPServerConfig.gasCanNaturallyDissipate) {
+                        if (blockEntity.skyMoves >= DPServerConfig.movementsBeforeGasCanDissipate) {
+                            float baseChance = DPServerConfig.baseDissipationChance;
+                            int additionalMoves = blockEntity.skyMoves - DPServerConfig.movementsBeforeGasCanDissipate;
+                            float currentChance = baseChance + (additionalMoves * DPServerConfig.dissipationChanceIncrease);
                             if (level.getRandom().nextFloat() < currentChance) {
                                 level.removeBlock(pos, false);
                                 return;

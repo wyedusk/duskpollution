@@ -3,6 +3,7 @@ package dev.wyedusk.duskpollution.event;
 import dev.wyedusk.duskpollution.DPBlocks;
 import dev.wyedusk.duskpollution.DPConfig;
 import dev.wyedusk.duskpollution.DuskPollution;
+import dev.wyedusk.duskpollution.server.DPServerConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
@@ -44,10 +45,13 @@ public class PlayerEventListener implements IModBusEvent {
                 for (int chunkZ = centerChunkPos.z - 1; chunkZ <= centerChunkPos.z + 1; chunkZ++) {
                     for (int localX = 0; localX < 16; localX++) {
                         for (int localZ = 0; localZ < 16; localZ++) {
-                            for (int yOffset = 0; yOffset < 4; yOffset++) {
+                            boolean doNextScan = true;
+                            int yOffset = 0;
+                            while (doNextScan) {
+                                doNextScan = false;
                                 BlockPos queryPos = new BlockPos(
                                         chunkX * 16 + localX,
-                                        DPConfig.gasMaximumHeight - yOffset,
+                                        DPServerConfig.gasMaximumHeight - yOffset,
                                         chunkZ * 16 + localZ
                                 );
                                 BlockState state = level.getBlockState(queryPos);
@@ -56,6 +60,13 @@ public class PlayerEventListener implements IModBusEvent {
                                     pollutants++;
                                     toxicPollutants++;
                                 }
+
+                                BlockPos belowPos = queryPos.below();
+                                BlockState belowState = level.getBlockState(belowPos);
+                                if (state.is(DPBlocks.POLLUTANTS) || state.is(DPBlocks.POLLUTANTS_TOXIC)) {
+                                    doNextScan = true;
+                                }
+                                yOffset += 1;
                             }
                         }
                     }
