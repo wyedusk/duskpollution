@@ -41,5 +41,12 @@ public class DPDataProvider implements IModBusEvent {
                         existingFileHelper
                 )
         );
+        generator.addProvider(
+                event.includeServer(),
+                new DPDataMapProvider(
+                        output,
+                        lookupProvider
+                )
+        );
     }
 }

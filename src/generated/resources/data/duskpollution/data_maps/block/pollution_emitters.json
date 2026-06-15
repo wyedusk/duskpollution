@@ -1,0 +1,59 @@
+{
+  "values": {
+    "minecraft:blast_furnace": [
+      {
+        "conditions": {
+          "lit": "true"
+        },
+        "pollution_interval": 275,
+        "pollution_release": 1,
+        "toxic_pollution_interval": 900,
+        "toxic_pollution_release": 1
+      }
+    ],
+    "minecraft:campfire": [
+      {
+        "conditions": {
+          "lit": "true"
+        },
+        "pollution_interval": 80,
+        "pollution_release": 1,
+        "toxic_pollution_interval": 3000,
+        "toxic_pollution_release": 1
+      }
+    ],
+    "minecraft:furnace": [
+      {
+        "conditions": {
+          "lit": "true"
+        },
+        "pollution_interval": 300,
+        "pollution_release": 1,
+        "toxic_pollution_interval": 9000,
+        "toxic_pollution_release": 1
+      }
+    ],
+    "minecraft:smoker": [
+      {
+        "conditions": {
+          "lit": "true"
+        },
+        "pollution_interval": 250,
+        "pollution_release": 1,
+        "toxic_pollution_interval": 0,
+        "toxic_pollution_release": 0
+      }
+    ],
+    "minecraft:soul_campfire": [
+      {
+        "conditions": {
+          "lit": "true"
+        },
+        "pollution_interval": 80,
+        "pollution_release": 1,
+        "toxic_pollution_interval": 3000,
+        "toxic_pollution_release": 1
+      }
+    ]
+  }
+}
