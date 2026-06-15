@@ -7,6 +7,6 @@
 
 <h2>Credits</h2>
 <ul>
-    <li>"Available on GitHub" badge from <a href="https://github.com/intergrav/devins-badges">Devin's Badges</a></li>
-    <li>"Available for NeoForge" badge from <a href="https://github.com/cassiancc/Cassians-Badges">Cassian's Badges</a></li>
+    <li><a href="https://github.com/intergrav/devins-badges">Devin's Badges</a>, for the "Available on GitHub" badge icon</li>
+    <li><a href="https://github.com/cassiancc/Cassians-Badges">Cassian's Badges</a>, for the "Available for NeoForge" badge icon</li>
 </ul>
