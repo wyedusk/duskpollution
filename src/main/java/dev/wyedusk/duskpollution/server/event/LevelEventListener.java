@@ -4,7 +4,6 @@ import dev.wyedusk.duskpollution.DPDataMaps;
 import dev.wyedusk.duskpollution.DuskPollution;
 import dev.wyedusk.duskpollution.pollution.PollutionManager;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.state.BlockState;
@@ -45,9 +44,7 @@ public class LevelEventListener {
             PollutionManager pollutionManager = PollutionManager.get(pmIdentifier);
             chunk.findBlocks(
                     b -> b.getBlockHolder().getData(DPDataMaps.POLLUTION_EMITTERS) != null,
-                    (blockPos, blockState) -> {
-                        pollutionManager.addEmitter(chunk.getPos(), blockPos);
-                    });
+                    (blockPos, blockState) -> pollutionManager.addEmitter(chunk.getPos(), blockPos));
         }
     }
 

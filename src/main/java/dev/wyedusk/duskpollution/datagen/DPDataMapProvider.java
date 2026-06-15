@@ -4,7 +4,6 @@ import dev.wyedusk.duskpollution.DPDataMaps;
 import dev.wyedusk.duskpollution.pollution.PollutionEmitterData;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.DataMapProvider;
@@ -69,6 +68,6 @@ public class DPDataMapProvider extends DataMapProvider {
     private void addBasicPollutionEmitter(
             Block block, List<PollutionEmitterData> data) {
         builder(DPDataMaps.POLLUTION_EMITTERS)
-                .add(block.builtInRegistryHolder().getDelegate(), data, false);
+                .add(block.defaultBlockState().getBlockHolder(), data, false);
     }
 }
