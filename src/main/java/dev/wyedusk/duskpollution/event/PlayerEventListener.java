@@ -1,12 +1,10 @@
 package dev.wyedusk.duskpollution.event;
 
 import dev.wyedusk.duskpollution.DPBlocks;
-import dev.wyedusk.duskpollution.DPConfig;
 import dev.wyedusk.duskpollution.DuskPollution;
 import dev.wyedusk.duskpollution.server.DPServerConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.network.chat.Component;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -39,8 +37,8 @@ public class PlayerEventListener implements IModBusEvent {
         int toxicPollutants = 0;
 
         ChunkPos centerChunkPos = player.chunkPosition();
-        if (level.canSeeSkyFromBelowWater(pos)) {
-            // Player is on the surface, do surface pollution check
+        if (level.canSeeSkyFromBelowWater(pos) || player.position().y >= 63) {
+            // Player is on the surface or above sea level, do surface pollution check
             for (int chunkX = centerChunkPos.x - 1; chunkX <= centerChunkPos.x + 1; chunkX++) {
                 for (int chunkZ = centerChunkPos.z - 1; chunkZ <= centerChunkPos.z + 1; chunkZ++) {
                     for (int localX = 0; localX < 16; localX++) {
@@ -63,7 +61,7 @@ public class PlayerEventListener implements IModBusEvent {
 
                                 BlockPos belowPos = queryPos.below();
                                 BlockState belowState = level.getBlockState(belowPos);
-                                if (state.is(DPBlocks.POLLUTANTS) || state.is(DPBlocks.POLLUTANTS_TOXIC)) {
+                                if (belowState.is(DPBlocks.POLLUTANTS) || belowState.is(DPBlocks.POLLUTANTS_TOXIC)) {
                                     doNextScan = true;
                                 }
                                 yOffset += 1;
