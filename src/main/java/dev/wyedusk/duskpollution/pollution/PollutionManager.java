@@ -4,7 +4,6 @@ import dev.wyedusk.duskpollution.DPBlocks;
 import dev.wyedusk.duskpollution.DPDataMaps;
 import dev.wyedusk.duskpollution.entity.DPGasEntity;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.state.BlockState;
@@ -81,8 +80,6 @@ public class PollutionManager {
     public void removeChunk(
             ChunkPos pos) {
         Set<BlockPos> positions = emittersByChunk.remove(pos);
-        System.out.println("Unload chunk: " + pos);
-        System.out.println("Known chunks: " + emittersByChunk.keySet());
         if (positions != null) {
             emitters.removeAll(positions);
             positions.forEach(timers::remove);
