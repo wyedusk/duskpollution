@@ -16,7 +16,7 @@ import net.neoforged.neoforge.event.level.LevelEvent;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
 
 @EventBusSubscriber(modid = DuskPollution.MODID)
-public class LevelEventListener {
+public class PollutionManagerEvents {
     @SubscribeEvent
     public static void onLevelTick(
             LevelTickEvent.Post event) {

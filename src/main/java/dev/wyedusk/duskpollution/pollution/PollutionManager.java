@@ -28,7 +28,6 @@ public class PollutionManager {
 
     public void tick(
             ServerLevel level) {
-        level.getServer().sendSystemMessage(Component.literal("Emitters count: %s".formatted(emitters.size())));
         for (BlockPos emitterPos : emitters) {
             BlockState emitterState = level.getBlockState(emitterPos);
             List<PollutionEmitterData> emitterDatas = emitterState.getBlockHolder().getData(DPDataMaps.POLLUTION_EMITTERS);
