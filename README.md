@@ -1,3 +1,5 @@
+> Archived because there's some horrid memory leak, and I'll probably pick up on this mod again in the future when I have more knowledge with NeoForge and can fix it.
+
 <h1 align="center">Dusk's Pollution</h1>
 <p align="center"><i>Adding pollution management to Minecraft</i></p>
 <p align="center"><a href="https://github.com/wyedusk/duskpollution"><img alt="Available on GitHub" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg"></a> <a href="https://neoforged.net/"><img alt="Available for NeoForge" height="56" src="https://raw.githubusercontent.com/cassiancc/Cassians-Badges/refs/heads/main/cozy/NeoForge.svg"></a></p>
